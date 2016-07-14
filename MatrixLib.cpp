@@ -6,7 +6,21 @@
 
 #include "MatrixLib.h"
 
-friend std::ostream& Matrix::operator <<(std::ostream& os,Matrix mat){
-	//os<<dt.x<<","<<dt.y<<std::endl;
-	return os;
+namespace MatrixKib{
+
+	template <class T, unsigned int row, unsigned int col>
+	Matrix::Matrix(){
+		this->COL_SIZE = col;
+		this->ROW_SIZE = row;
+	}
+	Matrix::~Matrix(){
+		delete matrix;
+	}
+
+	std::ostream& operator <<(std::ostream& os, Matrix mat){
+		os<<"ok";
+		//os<<dt.x<<","<<dt.y<<std::endl;
+		return os;
+	}
+
 }
